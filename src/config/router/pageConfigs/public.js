@@ -2,6 +2,9 @@ import Login from '../../../components/Login';
 import HelloWorld from '../../../components/HelloWorld';
 import {HELLO_PAGE_URL} from "../constants";
 
+
+const AUTH_SERVER_URI = 'http://auth.server.com:8001/';
+
 export default [
   {
     path: "/",
@@ -20,5 +23,9 @@ export default [
       titleKey: "hello",
       permissionKey: 'ADMIN_READ',
     },
+  },
+  {
+    path: "/login",
+    redirect: AUTH_SERVER_URI,
   },
 ];

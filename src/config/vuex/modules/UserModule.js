@@ -27,7 +27,7 @@ const actions = {
       throw e;
     }
   },
-  lear_user_info ({commit}) {
+  clear_user_info ({commit}) {
     commit(USER_INFO, null);
   },
 };
