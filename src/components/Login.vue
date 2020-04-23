@@ -1,16 +1,11 @@
 <template>
   <div class="login">
     <h1>{{$t("message.login")}}</h1>
-    <button class='btn btn-primary login-btn' @click='login()'>登录</button>
+    <el-button class='login-btn' type="success" @click='login'>登录</el-button>
   </div>
 </template>
 
 <script>
-  import {
-    mapActions,
-    mapGetters
-  } from 'vuex';
-
   export default {
     name: 'Login',
     data () {
@@ -19,20 +14,8 @@
       }
     },
     methods: {
-      ...mapGetters('userModule', {
-        get_user_info: 'get_user_info'
-      }),
-      ...mapActions('userModule', {
-        load_user_info: 'load_user_info',
-        clear_user_info: 'clear_user_info',
-      }),
       login () {
-        try {
-          this.$router.push({path:'hello'});
-        }
-        catch (err) {
-          this.$message.error(err);
-        }
+        window.location.href = 'http://client.server.com:8003/oauth2/authorization/jerry_auth';
       },
     }
   }
@@ -45,7 +28,7 @@
   }
 
   .login-btn {
-    width: 50%;
-    height: 35px;
+    width: 100px;
+    height: 100px;
   }
 </style>

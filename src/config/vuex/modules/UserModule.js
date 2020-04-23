@@ -20,7 +20,7 @@ const actions = {
   async load_user_info ({commit}) {
     try {
       let data = await publicApi.api_user_info();
-      commit(USER_INFO, data.data);
+      commit(USER_INFO, data);
     }
     catch (e) {
       commit(USER_INFO, null);

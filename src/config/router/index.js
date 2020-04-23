@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Login from '../../components/Login';
-import routerConfig from './routerConfig';
+import publicPage from './pageConfigs/public';
 
 Vue.use(Router);
 const router = new Router({
@@ -10,16 +10,11 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'login',
+      name: Login.name,
       component: Login,
-      meta: {
-        titleKey: 'login',
-        isIndex: true,
-      },
     },
+    ...publicPage,
   ],
 });
-routerConfig(router);
-
 
 export default router;
